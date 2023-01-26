@@ -16,8 +16,6 @@ with st.form(key='text_form'):
                 height=2,
             )
 
-    option = st.selectbox('What kind of story?',('Literary','Global', 'Erotic'))
-
     submit_button = st.form_submit_button(label="Tell me a story, robot!")
 
     if not submit_button:
