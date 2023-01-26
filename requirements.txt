@@ -1,0 +1,11 @@
+python-dotenv
+pandas
+numpy
+altair
+streamlit
+watchdog
+#googletrans==4.0.0-rc1
+pybase64
+nlpcloud
+replicate
+banana_dev==3.0.1
