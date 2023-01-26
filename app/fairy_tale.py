@@ -46,7 +46,7 @@ Erotic Fairy Tale #10: """ + str(doc) + "\n\n"
         st.write("Error!!!!!")
 
 	
-    client = nlpcloud.Client("finetuned-gpt-neox-20b", "0017fb171666c016076a89bb536537ad7e4627ac", gpu=True, lang="en")
+    client = nlpcloud.Client("finetuned-gpt-neox-20b", API_KEY, gpu=True, lang="en")
     generated_text = client.generation(
 	    input_prompt,
 	    min_length=500,
