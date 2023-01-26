@@ -16,33 +16,12 @@ with st.form(key='text_form'):
                 height=2,
             )
 
-    submit_button = st.form_submit_button(label="Tell me a story, robot!")
-
     if not submit_button:
         st.stop()
 
-    
-    doc2 = """These ten flash fiction fairy tales go beyond the bounds of normal fairy tales, drawing from cultures and themes that aren't often represented in these kinds of stories. They are inspired by stories from underrepresented global and historical cultures from Asia, Africa, and Latin America. They also draw on the experience of queer folks and queer culture. Some are more lighthearted and funny, and some include more intense themes like grief, pain, and suffering. They go far outside the normal bounds of normal fairy tales while still maintaining literary coherence and poignancy.
+    input_prompt = """These ten flash fiction fairy tales are both literary and creative. Some are more lighthearted and funny, and some include more intense themes like grief, pain, and suffering. They go far outside the normal bounds of normal fairy tales while still maintaining literary coherence and poignancy.
 
 Fairy Tale #10: """ + str(doc) + "\n\n"
-
-    doc3 = """These ten flash fiction fairy tales are both literary and creative. Some are more lighthearted and funny, and some include more intense themes like grief, pain, and suffering. They go far outside the normal bounds of normal fairy tales while still maintaining literary coherence and poignancy.
-
-Fairy Tale #10: """ + str(doc) + "\n\n"
-
-    doc4 = """These ten flash fiction erotic fairy tales are edgy and intense. They are literary and creative, and take place in a fairy tale adventure setting, but they include erotic themes like off-limits hookups, threesomes, and BDSM. They maintain literary coherence while pushing the edges of the reader's normal comfort zone.
-
-Erotic Fairy Tale #10: """ + str(doc) + "\n\n"
-	
-    if str(option) == 'Literary':
-        input_prompt = doc3
-    elif str(option) == 'Global':
-        input_prompt = doc2
-    elif str(option) == 'Erotic':
-        input_prompt = doc4
-    else:
-        st.write("Error!!!!!")
-
 	
     client = nlpcloud.Client("finetuned-gpt-neox-20b", API_KEY, gpu=True, lang="en")
     generated_text = client.generation(
