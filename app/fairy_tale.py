@@ -16,6 +16,8 @@ with st.form(key='text_form'):
                 height=2,
             )
 
+    submit_button = st.form_submit_button(label="Tell me a story, robot!")
+
     if not submit_button:
         st.stop()
 
